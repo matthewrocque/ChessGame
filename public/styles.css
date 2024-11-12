@@ -1,0 +1,117 @@
+/* styles.css */
+
+/* Reset some default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Basic layout and typography */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
+}
+
+h1 {
+  text-align: center;
+}
+
+#boardContainer{
+  display: flex;
+  grid-template-rows: repeat(3, 50px);
+  justify-content: center;
+  align-items: center;
+}
+
+#blank{
+  display: grid;
+  width: 20px;
+}
+
+#columnLabels{
+  display: grid;
+  grid-template-columns: repeat(8,50px);
+  width: 405px;
+  height: 20px;
+  margin: auto;
+  text-align: center;
+}
+
+#rowLabels{
+  display: grid;
+  grid-template-rows: repeat(8,50px);
+  width: 20px;
+  height: 405px;
+  align-items: center;
+}
+
+#chessboard{
+  display: grid;
+  grid-template-columns: repeat(8, 50px);
+  grid-template-rows: repeat(8, 50px);
+  width: 405px;                            
+  height: 405px;
+  border: 3px solid rgb(0, 0, 0);
+}
+
+.square{
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+
+.square.dark{
+  background-color: rgb(115, 157, 98);
+}
+
+.square.light{
+  background-color: rgb(240, 236, 217);
+}
+
+.square.highlight-red::after {
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(240, 81, 70, 0.4);
+    pointer-events: none; /* Allows clicks to pass through to the square */
+}
+
+.square.highlight-yellow::after{
+  content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(253, 215, 67, 0.4);
+    pointer-events: none; /* Allows clicks to pass through to the square */
+}
+
+.square.highlight-blue::after{
+  content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(80, 128, 218, 0.4);
+    pointer-events: none; /* Allows clicks to pass through to the square */
+}
+
+
+
+.chess-piece{
+  width: 90%;      /* Set to a percentage of cell size to fit inside */
+  height: 90%;     /* Maintain aspect ratio */
+  object-fit: contain; /* Keep original proportions */
+  position: absolute;  /* Position in the center */
+  top: 50%;           /* Center vertically */
+  left: 50%;          /* Center horizontally */
+  transform: translate(-50%, -50%);
+}

@@ -1,0 +1,16 @@
+{
+  "name": "chessgame",
+  "version": "1.0.0",
+  "description": "Design a version of chess where you can only premove.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1",
+    "socket.io": "^4.8.1"
+  }
+}
